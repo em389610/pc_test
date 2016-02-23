@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title>Math Maze</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../favicon.ico">
+    <title>Logic Gate Lesson</title>
+
+        <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
+    <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+	<link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html">Purple Cobras</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+        	<li><a href="AboutUs.html">About Purple Cobras</a></li>
+            <li><a href="APIInfo.html">About API</a></li>
+            <li><a href="GateGrabberInfo.html">About Gate Grabber</a></li>
+            <li><a href="MathMazeInfo.html">About Math Maze</a></li>
+
+            </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="version 1.0.html">Gate Grabber</a></li>
+                <li><a href="mathMaze.html">Math Maze</a></li>
+
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a href="#">Optional</a></li> <!-->
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+<br><br>
+
+<div id="textDiv", style=" display: none" > 
+    <img  id= "MathMazeLogo" src = "../images/MathMaze.png" ><br><br> 
+
+</div> 
+<div id = "menu">
+
+    <img  id= "MathMazeLogo" src = "../images/MathMaze.png" ><br><br><br>
+    <!-- <button class = "options" id = "options" onclick = "loadOptions()">Options</button><br> -->
+    Choose your difficulty:<br>
+    
+    <button class = "difficulty easy" id = "Easy" onclick ="colorChoice(1)"> Easy </button><br>
+    <button class = "difficulty moderate" id = "Moderate" onclick ="colorChoice(2)"> Moderate </button><br>
+    <button class = "difficulty hard" id = "Hard" onclick ="colorChoice(3)"> Hard</button><br>
+    <button class = "difficulty all" id = "All" onclick ="colorChoice(0)"> All </button><br>
+</div>
+<div id= "colorMenu" style = "display:none">
+    Choose a color:<br>
+    <button class = "colors" id = "red" onclick = "play(1)">RED</button>
+    <button class = "colors" id = "orange" onclick = "play(2)">ORANGE</button>
+    <button class = "colors" id = "yellow" onclick = "play(3)">YELLOW</button>
+    <button class = "colors" id = "green" onclick = "play(4)">GREEN</button><br><br>
+    <button class = "colors" id = "blue" onclick = "play(5)">BLUE</button>
+    <button class = "colors" id = "indigo" onclick = "play(6)">INDIGO</button>
+    <button class = "colors" id = "violet" onclick = "play(7)">VIOLET</button>
+    <button class = "colors" id = "cyan" onclick = "play(8)">CYAN</button><br><br>
+    <button class = "colors" id = "chartreuse" onclick = "play(9)">CHARTREUSE</button>
+    <button class = "colors" id = "magenta" onclick = "play(10)">MAGENTA</button>
+    <button class = "colors" id = "navy" onclick = "play(11)">NAVY</button>
+    <button class = "colors" id = "chocolate" onclick = "play(12)">CHOCOLATE</button>
+
+</div>
+
+<div id="hit_missDiv" style="display:none"> </div>
+
+<div id="mazeDiv" style="display:none">
+
+	<canvas id="maze" width="600" height="600" ></canvas>
+</div>
+
+<div id="functionDiv" style="display:none"> 
+	<canvas id="function" width="505" height="45"></canvas>
+</div>
+<div id="scoreboardDiv">
+        <canvas id="scoreboard" width = "400" height="45"></canvas>
+</div>
+
+<script src="../js/Visualization API/Resources/d3.min.js"></script>
+<script src="../js/Visualization API/Resources/d3plus.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="../js/Visualization API/test.js"></script>
+<script src="../js/Math Maze/fraction.js"></script>
+<script src="../js/Math Maze/mathMaze.js"></script>
+
+
+
+</div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../bootstrap/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+  </body>
+</html>

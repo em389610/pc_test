@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Math Maze Information</title>
+
+        <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+	<link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+<!-- For Parse -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html">Purple Cobras</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+        	<li><a href="AboutUs.html">About Purple Cobras</a></li>
+            <li><a href="APIInfo.html">About API</a></li>
+            <li><a href="GateGrabberInfo.html">About Gate Grabber</a></li>
+            <li><a href="MathMazeInfo.html">About Math Maze</a></li>
+
+            </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="version 1.0.html">Gate Grabber</a></li>
+                <li><a href="mathMaze.html">Math Maze</a></li>
+
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a href="#">Optional</a></li> -->
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+<br><br>
+<br>
+	<h5>Math Maze Information</h5>
+
+	<p>This maze style game will help the player practice all kinds of mathematical functions in a fun and entertaining way. It is very easy to play and makes solving math problems more fun.</p>
+	<p>The first thing you do is choose the difficulty you want to play at. You then are able to choose the color of the player box in the game. When the maze loads, you are given a math problem to solve. The problems come in many forms based on the difficulty. There are some that ask for the greatest common factor, some that require a multistep solving process, and some that are just simple addition and subtraction.</p>
+
+	<p>First the player must solve the problem given. Then the player must find the correct answer in the maze. There are 4 answers placed on the for each problem. If the player retrieves the wrong answer they are penalized and the miss count increases. Once the player has retrieved the correct answer, they are rewarded and the hit count increases. There is a visualization for a correct and wrong answer. A different problem with a different maze is generated and loaded to the screen.</p>
+  <b>Difficulties:</b>
+  <ul>
+    <li><b>Easy</b></li>
+    <ul>
+      <li>Addition</li>
+      <li>Subtraction</li>
+      <li>Greatest Common Factor</li>
+    </ul>
+    <li><b>Moderate</b></li>
+    <ul>
+      <li>Multiplication</li>
+      <li>Division</li>
+      <li>Linear equations with one variable</li>
+    </ul>
+    <li><b>Hard</b></li>
+    <ul>
+      <li>Exponents</li>
+      <li>Least Common Multiple</li>
+      <li>Linear equations with variables on both sides</li>
+    </ul>
+    <li><b>All</b></li>
+    <ul>
+      <li>Mix of all Easy, Moderate, and Hard problems</li>
+    </ul>
+
+  </ul>
+  <p><b>Coming Soon:</b>
+      <ul>
+        <li>Game Ending</li>
+        <li>Scoring</li>
+        <li>Timer/time bonus</li>
+        <li>Updated visuals</li>
+        <li>More Mazes!</li>
+      </ul>
+    
+    </p>
+  <p>We are currently working on and improving this game. We will try to keep this information as up to date as possible. 
+  </p>
+				<br><br>
+				<!-- <p>            <a href = "LogicGateLesson.html" class = "btn btn-default" role = "button"> 
+				Logic Gate Lesson </a> </p> -->
+				
+	<!-- <p>For help on logic gates, click here!</p> -->
+
+
+<div id="main">
+<p><b>We want to know what you think!</b> </p>
+
+<commentHeader><b>Leave us a comment:</b></commentHeader><br>
+
+<div class="commentContainer">
+<form>
+ <br><label>Name <i>(Optional)</i></label>
+ <input id="usrname" type="text" name="usrname"><br/>
+
+</form>
+</div>
+
+<form id="form">
+ <br><br>
+<textarea id="comment" rows="5" cols="69"> </textarea><br>
+  <button>Submit</button><br>
+</form>
+<br>
+<script type="text/javascript">
+	Parse.initialize("KvRKWnGQW8ef53uzEhTqZPPnRR0sGVjwewOifc5W", "b4BHBpwXialoERipUWBPQ4pyOr62Rj9cXZagA53G");    
+
+	var form = document.getElementById('form');
+	usrname = document.getElementById('usrname');
+	comment = document.getElementById('comment');
+
+	form.onsubmit = function() {
+   	var varName = usrname.value;
+   	if(varName.length == 0)
+   		varName = "Anonymous"
+
+   	var varComment = comment.value;
+
+	var MM_Comments = Parse.Object.extend("MM_Comments");
+	var comm = new MM_Comments();
+
+comm.save({
+  UserName: varName,
+  UserComment: varComment
+}, {
+  success: function(comm) {
+    // The object was saved successfully.
+  },
+  error: function(comm, error) {
+    // The save failed.
+    // error is a Parse.Error with an error code and message.
+  }
+});
+   	
+};
+
+var MM_Comments = Parse.Object.extend("MM_Comments");
+var query = new Parse.Query(MM_Comments);
+query.exists("objectId");query.find({
+  success: function(results) {
+      for (var i = 0; i < results.length; i++) {
+      	var object = results[i];
+			document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + "<b>" + object.get('UserName') + "</b> - <i>" + object.get('createdAt') + "</i><br>" + object.get('UserComment') + "<br>";  
+		 	if(i != results.length - 1) {
+		 		document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + "___________________________________________________________<br><br>";
+		 	}
+		 }  },
+  error: function(error) {
+    // The request failed
+  }
+});
+
+</script>
+<div id = "commentsDiv" >
+<p id="demo"></p> </div>
+<br>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../bootstrap/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+

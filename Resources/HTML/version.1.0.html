@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Logic Gate Lesson</title>
+
+        <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+	<link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html">Purple Cobras</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+        	<li><a href="AboutUs.html">About Purple Cobras</a></li>
+            <li><a href="APIInfo.html">About API</a></li>
+            <li><a href="GateGrabberInfo.html">About Gate Grabber</a></li>
+            <li><a href="MathMazeInfo.html">About Math Maze</a></li>
+
+            </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="version 1.0.html">Gate Grabber</a></li>
+                <li><a href="mathMaze.html">Math Maze</a></li>
+
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a href="#">Optional</a></li> <!-->
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+<br><br>
+ 
+<!--Some buttons below have similar names such as "mainMenu_Controls" and "mainMenu_HowTo". The names represent "whereTheButtonWillTakeYou_whatScreenItsOn".
+    So for example, "mainMenu_Controls" will take you to the main menu from the controls screen. -->
+<div id="gameDiv"> 
+<canvas id="myCanvas" width="480" height="600"></canvas>
+<button type="button" id="quitButton" class="ui inGame buttons" onclick="quitGame()">Quit</button>
+<button type="button" id="play" class="ui mainMenu buttons" onclick="newGame()">Play!</button>
+<button type="button" id="howTo" class="ui mainMenu buttons" onclick="loadHowToPlay()">How to Play</button>
+<button type="button" id="option" class="ui mainMenu buttons" onclick="loadoptions()">Options</button>
+<button type="button" id="replay" class="ui endGame buttons" onclick="newGame()">Replay</button>
+<button type="button" id="endm" class="ui endGame buttons" onclick="quitGame()">Main Menu</button>
+<button type="button" id="mainMenu_Options" class="ui options buttons" onclick ="loadMainMenu()">Main Menu</button>
+<button type="button" id="mainMenu_HowTo" class="ui howToPlay buttons" onclick ="loadMainMenu()">Main Menu</button>
+<button type="button" id="mainMenu_Controls" class="ui controls buttons" onclick ="loadMainMenu()">Main Menu</button>
+<button type="button" id="controls_MainMenu" class="ui mainMenu buttons" onclick ="loadControls()">Controls</button>
+<button type="button" id="highScores_MainMenu" class="ui mainMenu buttons" onclick ="loadHighScores()">High Scores</button>
+<button type="button" id="mainMenu_HighScores" class="ui highScores buttons" onclick ="loadMainMenu()">Main Menu</button>
+<button type="button" id="mainMenu_NewHighScoreScreen" class="ui newHighScoreScreen buttons" onclick ="loadMainMenu()">No Thanks</button>
+<button type="button" id="submitHighScore" class="ui newHighScoreScreen buttons" onclick ="addNewHighScore()">Submit!</button>
+<button type="button" id="config_Options" class="ui options buttons" onclick ="loadConfiguration()">Button Configuration</button>
+<input type="text" id="nameInput" class="ui newHighScoreScreen" maxlength="20" >
+<form id="opt" class ="ui options">
+    Background Music
+    <br>
+    <input type="range" id="bgm" min="0" max="100"
+           step="1" value ="100">
+    <br>
+    <br>
+    Sound Effects
+    <br>
+    <input type="range" id="sfx" min="0" max="100"
+           step="1" value ="100">
+
+    <br>
+</form>
+
+<form id="gameWelcome" class ="ui howToPlay">
+	Welcome to Gate Grabber!
+</form>
+
+<form id="gameOverText" class ="ui endGame newHighScoreScreen">
+GAME OVER!
+</form>
+
+<form id="highScoreLabel" class ="ui endGame">
+High Scores
+</form>
+<form id="gameOverScore" class ="ui endGame newHighScoreScreen">
+
+</form>
+
+<form id="congratulations" class ="ui newHighScoreScreen">
+Congratulations! You've recorded a new high Score! Please enter your name below.
+</form>
+
+<form id="framesPerSecond" class ="ui inGame statuses">
+
+</form>
+
+<form id="score" class ="ui inGame statuses">
+
+</form>
+
+<form id="lives" class ="ui inGame statuses">
+
+</form>
+
+<form id="highScore1" class ="ui highScores scoreList ">
+1.   nobody - 0pts
+</form>
+
+<form id="highScore2" class ="ui highScores scoreList">
+2.   nobody - 0pts
+</form>
+
+<form id="highScore3" class ="ui highScores scoreList">
+3.   nobody - 0pts
+</form>
+
+<form id="highScore4" class ="ui highScores scoreList">
+4.   nobody - 0pts
+</form>
+
+<form id="highScore5" class ="ui highScores scoreList">
+5.   nobody - 0pts
+</form>
+
+<form id="highScore6" class ="ui highScores scoreList">
+6.   nobody - 0pts
+</form>
+
+<form id="highScore7" class ="ui highScores scoreList">
+7.   nobody - 0pts
+</form>
+
+<form id="highScore8" class ="ui highScores scoreList">
+8.   nobody - 0pts
+</form>
+
+<form id="highScore9" class ="ui highScores scoreList">
+9.   nobody - 0pts
+</form>
+
+<form id="highScore10" class ="ui highScores scoreList">
+10. nobody - 0pts
+</form>
+
+<form id="highScoreEnd1" class ="ui endGame scoreList ">
+1.   nobody - 0pts
+</form>
+
+<form id="highScoreEnd2" class ="ui endGame scoreList">
+2.   nobody - 0pts
+</form>
+
+<form id="highScoreEnd3" class ="ui endGame scoreList">
+3.   nobody - 0pts
+</form>
+
+<form id="highScoreEnd4" class ="ui endGame scoreList">
+4.   nobody - 0pts
+</form>
+
+<form id="highScoreEnd5" class ="ui endGame scoreList">
+5.   nobody - 0pts
+</form>
+
+<form id="highScoreEnd6" class ="ui endGame scoreList">
+6.   nobody - 0pts
+</form>
+
+<form id="highScoreEnd7" class ="ui endGame scoreList">
+7.   nobody - 0pts
+</form>
+
+<form id="highScoreEnd8" class ="ui endGame scoreList">
+8.   nobody - 0pts
+</form>
+
+<form id="highScoreEnd9" class ="ui endGame scoreList">
+9.   nobody - 0pts
+</form>
+
+<form id="highScoreEnd10" class ="ui endGame scoreList">
+10. nobody - 0pts
+</form>
+<form id="gameDescription" class ="ui howToPlay">
+	Gate Grabber is a game that is based on the concepts of basic Boolean logic gates. The goal of the game is to collect as many of the gates as you can 
+	by inputting the value that causes them to evaluate to a logical 1, or "true". When a gate is collected and the input evaluates to a 1 you will recieve points.
+	However, collecting a gate that evaluates to a logical 0, or "false" will cause you to lose a life. There is no penalty for not collecting all the gates, only for 
+	inputting incorrect answers.
+</form>
+
+<form id="hint" class ="ui howToPlay">
+Hint: Not all gates have a possible correct answer!
+</form>
+
+<form id="controlsDescription" class ="ui controls">
+	Movement:
+</form>
+
+<form id="controlsDescription2" class ="ui controls">
+	Change Player Value:
+</form>
+
+<form id="controlsDescription3" class ="ui controls">
+	Or
+</form>
+
+<img  id= "menuLogo" src = "../MainMenu/logo.png" class="ui mainMenu logos">
+<img  id= "highScoresLogo" src = "../MainMenu/highscores.png" class="ui highScores logos">
+<img  id= "optionsLogo" src = "../MainMenu/options.png" class="ui options logos">
+<img  id= "howToLogo" src = "../MainMenu/howto.png" class="ui howToPlay logos">
+<img  id= "controlsLogo" src = "../MainMenu/controls.png" class="ui controls logos">
+<img  id= "arrowKeys" src = "../MainMenu/arrowkeys.png" class="ui controls">
+<img  id= "mouseCursor" src = "../MainMenu/mousecursor.png" class="ui controls">
+<img  id= "leftClick" src = "../MainMenu/leftclick.png" class="ui controls">
+<img  id= "textBackground" src = "../MainMenu/textbackground.png" class="ui howToPlay">
+<img  id= "textBackground2" src = "../MainMenu/textbackground.png" class="ui controls">
+<img  id= "textBackground3" src = "../MainMenu/textbackground.png" class="ui options">
+<img  id= "textBackground4" src = "../MainMenu/textbackground.png" class="ui highScores">
+<img  id= "textBackground5" src = "../MainMenu/textbackground.png" class="ui endGame">
+<img  id= "textBackground6" src = "../MainMenu/textbackground.png" class="ui newHighScoreScreen">
+
+<!-- main menu animation elements -->
+<img  id= "frame1" src = "../MainMenu/animation/cursor.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame2" src = "../MainMenu/animation/nocursor.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame3" src = "../MainMenu/animation/frame3.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame4" src = "../MainMenu/animation/frame4.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame5" src = "../MainMenu/animation/frame5.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame6" src = "../MainMenu/animation/frame6.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame7" src = "../MainMenu/animation/frame7.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame8" src = "../MainMenu/animation/frame8.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame9" src = "../MainMenu/animation/frame9.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame10" src = "../MainMenu/animation/frame10.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame11" src = "../MainMenu/animation/frame11.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame12" src = "../MainMenu/animation/frame12.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame13" src = "../MainMenu/animation/frame13.png" class="ui mainMenuAnimation animationLogos">
+<img  id= "frame14" src = "../MainMenu/animation/frame14.png" class="ui mainMenuAnimation animationLogos">
+</div>
+
+
+<div id = "speedDiv" >
+    <div id = "speedDivTop">
+        <div id = "dice1Div" class =  "diceView" >
+        </div>
+        <div id = "dice2Div" class =  "diceView" >
+        </div>
+        <div id = "dice3Div" class =  "diceView" >
+        </div>
+    </div>
+    <div id = "speedDivBottom">
+        <div id = "rate1Div" class =  "speedView" >
+        </div>
+        <div id = "rate2Div" class =  "speedView" >
+        </div>
+        <div id = "rate3Div" class =  "speedView" >
+        </div>
+    </div>
+</div>
+
+
+        <img  id= "AND00x" src = "../Gates/and00x.png">
+<img  id= "AND0x0" src = "../Gates/and0x0.png">
+<img  id= "AND0x1" src = "../Gates/and0x1.png">
+<img  id= "AND01x" src = "../Gates/and01x.png">
+<img  id= "AND1x0" src = "../Gates/and1x0.png">
+<img  id= "AND1x1" src = "../Gates/and1x1.png">
+<img  id= "AND10x" src = "../Gates/and10x.png">
+<img  id= "AND11x" src = "../Gates/and11x.png">
+<img  id= "OR00x" src = "../Gates/or00x.png">
+<img  id= "OR0x0" src = "../Gates/or0x0.png">
+<img  id= "OR0x1" src = "../Gates/or0x1.png">
+<img  id= "OR01x" src = "../Gates/or01x.png">
+<img  id= "OR1x0" src = "../Gates/or1x0.png">
+<img  id= "OR1x1" src = "../Gates/or1x1.png">
+<img  id= "OR10x" src = "../Gates/or10x.png">
+<img  id= "OR11x" src = "../Gates/or11x.png">
+
+<script src="../js/Visualization API/Resources/d3.min.js"></script>
+<script src="../js/Visualization API/Resources/d3plus.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="../js/Visualization API/test.js"></script>
+<script src="http://www.parsecdn.com/js/parse-latest.js"></script>
+<script src="../js/Gate Grabber/GateGrabber.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+
+</div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../bootstrap/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Gate Grabber Information</title>
+
+        <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+	<link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+<!-- For Parse -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+  </head>
+
+  <body>
+
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html">Purple Cobras</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+        	<li><a href="AboutUs.html">About Purple Cobras</a></li>
+            <li><a href="APIInfo.html">About API</a></li>
+            <li><a href="GateGrabberInfo.html">About Gate Grabber</a></li>
+            <li><a href="MathMazeInfo.html">About Math Maze</a></li>
+
+            </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="version 1.0.html">Gate Grabber</a></li>
+                <li><a href="mathMaze.html">Math Maze</a></li>
+
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a href="#">Optional</a></li> <!-->
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+
+
+<br><br>
+<br>
+	<h5>Gate Grabber Information</h5>
+
+	<p>This puzzle game is based on logic gate functionality. In this game the player will choose an input (0 or 1) that will satisfy the
+				gate that is on the screen. Each gate will have 2 inputs and 1 output. One of the inputs is given and the other comes from the player.  There is the possibility for gates that do not have a correct answer. In that case, no input should be given to the gate. </p>
+	<p>When the game starts, there are 3 gates that fall at a chosen rate. Each gate will reset when the player provides an input or the gate
+				falls off the screen. At this time, a new gate and rate is randomly generated. </p>
+	<p>If the player provides the correct value to satisfy the gate, the player receives 100 points. If the player provides an incorrect value to
+				the gate, the player will lose a life. The player starts off with 10 lives and 0 points. The game ends when the player has 0 lives left. If the player gets a score in the top 10 they will be asked for their name for the highscore board.</p>
+  <p>There are powerups that the player can retrieve. There is a x2 multiplier and a 1up powerup right now. The x2 multiplier lasts for 15 seconds. The 1up gives the player 1 extra life.</p>
+				<br><br>
+				<p>For help on logic gates, visit our Logic Gate Lesson:</p>
+				<p>            <a href = "LogicGateLesson.html" class = "btn btn-default" role = "button"> 
+				Logic Gate Lesson </a> </p>
+				
+
+<br>
+<div id="main">
+<p><b>We want to know what you think!</b> </p>
+
+<commentHeader><b>Leave us a comment:</b></commentHeader><br>
+
+<div class="commentContainer">
+<form>
+ <br><label>Name <i>(Optional)</i></label>
+ <input id="usrname" type="text" name="usrname"><br/>
+
+</form>
+</div>
+
+
+<form id="form">
+ <br><br>
+<textarea id="comment" rows="5" cols="69"> </textarea><br>
+  <button>Submit</button><br>
+</form>
+<br>
+<script type="text/javascript">
+	Parse.initialize("KvRKWnGQW8ef53uzEhTqZPPnRR0sGVjwewOifc5W", "b4BHBpwXialoERipUWBPQ4pyOr62Rj9cXZagA53G");    
+
+	var form = document.getElementById('form');
+	usrname = document.getElementById('usrname');
+	comment = document.getElementById('comment');
+
+	form.onsubmit = function() {
+   	var varName = usrname.value;
+   	if(varName.length == 0)
+   		varName = "Anonymous"
+
+   	var varComment = comment.value;
+
+	var GG_Comments = Parse.Object.extend("GG_Comments");
+	var comm = new GG_Comments();
+
+comm.save({
+  UserName: varName,
+  UserComment: varComment
+}, {
+  success: function(comm) {
+    // The object was saved successfully.
+  },
+  error: function(comm, error) {
+    // The save failed.
+    // error is a Parse.Error with an error code and message.
+  }
+});
+   	
+};
+
+var GG_Comments = Parse.Object.extend("GG_Comments");
+var query = new Parse.Query(GG_Comments);
+query.exists("objectId");query.find({
+  success: function(results) {
+      for (var i = 0; i < results.length; i++) {
+      	var object = results[i];
+		
+		document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + "<b>" + object.get('UserName') + "</b>  -  <i>" + object.get('createdAt') + "</i><br>" + object.get('UserComment') + "<br>";  
+		 if(i != results.length - 1) {
+		 	document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + "___________________________________________________________<br><br>";
+		 }
+		 }
+  },
+  error: function(error) {
+    // The request failed
+  }
+});
+
+
+
+</script>
+<div id = "commentsDiv" >
+<p id="demo"></p> </div>
+<br>
+
+    </div> <!-- /container -->
+
+
+<script>
+  window.fbAsyncInit = function() {
+
+    Parse.FacebookUtils.init({
+      appId      : '796545547155753',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+    
+        Parse.FacebookUtils.logIn(null, {
+  success: function(user) {
+    if (!user.existed()) {
+      alert("User signed up and logged in through Facebook!");
+    } else {
+      alert("User logged in through Facebook!");
+    }
+  },
+  error: function(user, error) {
+    alert("User cancelled the Facebook login or did not fully authorize.");
+  }
+});
+    
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../bootstrap/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+
